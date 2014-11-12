@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @gender.name %>
+</p>
+<h3>All <%= @gender.name %> patients</h3>
+<ul>
+  <%= @gender.patients.each  do |patient|  %>
+      <li><%= link_to patient.name, patient %> </li>
+  <%end%>
+
+</ul>
+
+<%= link_to 'Edit', edit_gender_path(@gender) %> |
+<%= link_to 'Back', genders_path %>
